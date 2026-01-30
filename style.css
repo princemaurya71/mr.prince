@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --primary: #1e90ff;
+}
+
+body.dark {
+  --bg: #f4f4f4;
+  --text: #111;
+  --primary: #0066ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  transition: 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links ul {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 220px;
+    height: calc(100vh - 70px);
+    background: var(--bg);
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 1000;
+  }
+
+  .nav-links ul.active {
+    right: 0;
+  }
+}
+
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  gap: 50px;
+  overflow: hidden;
+  border-bottom: 1px solid gray;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+}
+
+.hero-text span {
+  color: var(--primary);
+}
+
+.hero-text p {
+  margin: 20px 0;
+  opacity: 0.8;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+/* Image */
+.hero-img {
+  /* flex: 1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 1000px;   /* controls desktop size */
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+
+
+/* Sections */
+.section {
+  min-height: 80vh;
+  padding: 80px 10%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.8s;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
+
+
+/* =========================
+   ANIMATED BACKGROUND BLOBS
+========================= */
+
+.blobs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation: float 20s infinite alternate ease-in-out;
+}
+
+/* Blob Colors */
+.blob1 {
+  background: #1e90ff;
+  top: 10%;
+  left: 5%;
+  animation-duration: 18s;
+}
+
+.blob2 {
+  background: #00c6ff;
+  top: 50%;
+  right: 10%;
+  animation-duration: 22s;
+}
+
+.blob3 {
+  background: #6a5acd;
+  bottom: 10%;
+  left: 30%;
+  animation-duration: 25s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(80px, -60px) scale(1.1);
+  }
+  100% {
+    transform: translate(-60px, 40px) scale(1);
+  }
+}
+
+/* Dark mode blob adjustment */
+body.dark .blob {
+  opacity: 0.35;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .blob {
+    width: 200px;
+    height: 200px;
+    filter: blur(60px);
+  }
+}
