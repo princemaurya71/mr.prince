@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 :root {
   --bg: #000000;
@@ -17,7 +16,7 @@ body.dark {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-   font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: normal;
 }
@@ -108,10 +107,8 @@ nav ul li a:hover::after {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-
 /* Mobile Menu */
 @media (max-width: 768px) {
-
   .hamburger {
     display: flex;
   }
@@ -128,13 +125,13 @@ nav ul li a:hover::after {
     gap: 25px;
     transition: 0.4s ease;
     z-index: 1000;
+    display: flex;
   }
 
   .nav-links ul.active {
     right: 0;
   }
 }
-
 
 /* Hero */
 .hero {
@@ -187,13 +184,11 @@ nav ul li a:hover::after {
 
 .hero-img img {
   width: 100%;
-  max-width: 1000px;   /* controls desktop size */
+  max-width: 1000px; /* controls desktop size */
   height: auto;
   border-radius: 20px;
   object-fit: cover;
 }
-
-
 
 /* Sections */
 .section {
@@ -220,7 +215,6 @@ nav ul li a:hover::after {
     display: none;
   }
 }
-
 
 /* =========================
    ANIMATED BACKGROUND BLOBS
