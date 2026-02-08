@@ -72,6 +72,7 @@ nav ul li a:hover::after {
 }
 
 #themeToggle {
+  padding-right: 150px;
   background: none;
   border: none;
   font-size: 20px;
@@ -106,6 +107,29 @@ nav ul li a:hover::after {
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+
+/* =========================
+   HAMBURGER BLUR OVERLAY
+========================= */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+/* Show overlay */
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
 
 /* Mobile Menu */
 @media (max-width: 768px) {
@@ -285,3 +309,91 @@ body.dark .blob {
     filter: blur(60px);
   }
 }
+
+/* ======================
+   ABOUT SECTION
+====================== */
+
+.about {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 10%;
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+
+.about-title {
+  font-size: 48px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.about-text {
+  max-width: 720px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.about-btn {
+  margin-top: 35px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Floating Images */
+.about-images img {
+  position: absolute;
+  width: 200px;
+  border-radius: 14px;
+  transition: 0.4s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+/* Hover Shadow + Lift */
+.about-images img:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 5px 100px rgb(255, 255, 255);
+}
+
+/* Image Positions */
+.p1 {
+  top: 15%;
+  left: 12%;
+}
+
+.p2 {
+  bottom: 18%;
+  left: 10%;
+}
+
+.p3 {
+  top: 22%;
+  right: 12%;
+}
+
+.p4 {
+  bottom: 18%;
+  right: 10%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 36px;
+  }
+
+  .about-images img {
+    width: 90px;
+  }
+
+  .p1 { top: 8%; left: 5%; }
+  .p2 { bottom: 10%; left: 5%; }
+  .p3 { top: 10%; right: 5%; }
+}
+

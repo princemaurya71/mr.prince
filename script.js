@@ -72,18 +72,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-
-// HAMBURGER MENU FIX
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
+const overlay = document.getElementById("menuOverlay");
 
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
-
-  // Hamburger animation
-  hamburger.classList.toggle("open");
-
-  // GSAP animation when menu opens
+  overlay.classList.toggle("active");
   if (navMenu.classList.contains("active")) {
     gsap.from("#navMenu li", {
       x: 50,
@@ -94,6 +89,13 @@ hamburger.addEventListener("click", () => {
     });
   }
 });
+
+// Close menu when clicking overlay
+overlay.addEventListener("click", () => {
+  navMenu.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
 
 document.querySelectorAll("#navMenu a").forEach(link => {
   link.addEventListener("click", () => {
@@ -130,3 +132,62 @@ gsap.to(".blob3", {
   yoyo: true,
   ease: "sine.inOut"
 });
+
+// ABOUT SECTION GSAP
+gsap.from(".about-title", {
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 80%"
+  },
+  y: 40,
+  opacity: 0,
+  duration: 1
+});
+
+gsap.from(".about-text", {
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 75%"
+  },
+  y: 30,
+  opacity: 0,
+  duration: 1,
+  delay: 0.2
+});
+
+gsap.from(".about-btn", {
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 70%"
+  },
+  scale: 0.8,
+  opacity: 0,
+  duration: 0.6,
+  delay: 0.4
+});
+
+/* Floating Image Animation */
+gsap.to(".p1", {
+  y: -20,
+  duration: 4,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});
+
+gsap.to(".p2", {
+  y: 25,
+  duration: 5,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});
+
+gsap.to(".p3", {
+  y: -15,
+  duration: 4.5,
+  repeat: -1,
+  yoyo: true,
+  ease: "sine.inOut"
+});
+
