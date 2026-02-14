@@ -251,3 +251,28 @@ gsap.from(".contact-right", {
   duration: 1,
   ease: "power3.out"
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".footer-cta", {
+  scrollTrigger: {
+    trigger: ".footer",
+    start: "top 80%"
+  },
+  opacity: 0,
+  y: 80,
+  duration: 1,
+  ease: "power4.out"
+});
+
+gsap.from(".footer-col", {
+  scrollTrigger: {
+    trigger: ".footer-main",
+    start: "top 85%"
+  },
+  opacity: 0,
+  y: 40,
+  stagger: 0.2,
+  duration: 1,
+  ease: "power3.out"
+});
