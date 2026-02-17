@@ -2,28 +2,28 @@
 gsap.from(".logo", {
   y: -30,
   opacity: 0,
-  duration: 1
+  duration: 1,
 });
 
 gsap.from("nav ul li", {
   y: -20,
   opacity: 0,
   stagger: 0.15,
-  duration: 0.8
+  duration: 0.8,
 });
 
 gsap.from(".hero-text h1", {
   x: -100,
   opacity: 0,
   duration: 1,
-  delay: 0.5
+  delay: 0.5,
 });
 
 gsap.from(".hero-text h2", {
   x: -100,
   opacity: 0,
   duration: 1,
-  delay: 0.7
+  delay: 0.7,
 });
 
 gsap.from(".hero-text p, .btn", {
@@ -31,14 +31,55 @@ gsap.from(".hero-text p, .btn", {
   opacity: 0,
   duration: 1,
   delay: 0.9,
-  stagger: 0.2
+  stagger: 0.2,
 });
 
 gsap.from(".hero-img img", {
   scale: 0.7,
   opacity: 0,
   duration: 1.2,
-  delay: 1
+  delay: 1,
+});
+
+// Initialize Lenis
+const lenis = new Lenis({
+  duration: 1.2,
+  smoothWheel: true,
+  smoothTouch: false,
+  direction: "vertical",
+  gestureDirection: "vertical",
+  wheelMultiplier: 1,
+  touchMultiplier: 1.5,
+  infinite: false,
+});
+
+// RAF Loop
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// Loader animation
+
+window.addEventListener("load", () => {
+  const tl = gsap.timeline();
+
+  tl.to(".loader-progress", {
+    width: "100%",
+    duration: 1.5,
+    ease: "power2.out",
+  })
+    .to(".loader-text", {
+      opacity: 0,
+      y: -20,
+      duration: 0.5,
+    })
+    .to(".loader", {
+      y: "-100%",
+      duration: 1,
+      ease: "power4.inOut",
+    });
 });
 
 // Dark Mode
@@ -51,8 +92,8 @@ toggle.addEventListener("click", () => {
 const sections = document.querySelectorAll(".section");
 
 const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
       }
@@ -61,23 +102,24 @@ const observer = new IntersectionObserver(
   { threshold: 0.2 }
 );
 
-sections.forEach(section => observer.observe(section));
+sections.forEach((section) => observer.observe(section));
 
 //Typing Animation
 
 new Typed(".typing", {
-  strings: [ "Web Designer", "Frontend Developer", "Freelancer"],
+  strings: ["Web Designer", "Frontend Developer", "Freelancer"],
   typeSpeed: 90,
   backSpeed: 40,
   backDelay: 1100,
-  loop: true
+  loop: true,
 });
 
 // Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
+    document
+      .querySelector(this.getAttribute("href"))
       .scrollIntoView({ behavior: "smooth" });
   });
 });
@@ -95,7 +137,7 @@ hamburger.addEventListener("click", () => {
       opacity: 0,
       stagger: 0.1,
       duration: 0.4,
-      ease: "power2.out"
+      ease: "power2.out",
     });
   }
 });
@@ -106,14 +148,12 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
 });
 
-
-document.querySelectorAll("#navMenu a").forEach(link => {
+document.querySelectorAll("#navMenu a").forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active");
     hamburger.classList.remove("open");
   });
 });
-
 
 // GSAP Blob Motion
 gsap.to(".blob1", {
@@ -122,7 +162,7 @@ gsap.to(".blob1", {
   duration: 12,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 
 gsap.to(".blob2", {
@@ -131,7 +171,7 @@ gsap.to(".blob2", {
   duration: 15,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 
 gsap.to(".blob3", {
@@ -140,40 +180,40 @@ gsap.to(".blob3", {
   duration: 18,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 
 // ABOUT SECTION GSAP
 gsap.from(".about-title", {
   scrollTrigger: {
     trigger: ".about",
-    start: "top 80%"
+    start: "top 80%",
   },
   y: 40,
   opacity: 0,
-  duration: 1
+  duration: 1,
 });
 
 gsap.from(".about-text", {
   scrollTrigger: {
     trigger: ".about",
-    start: "top 75%"
+    start: "top 75%",
   },
   y: 30,
   opacity: 0,
   duration: 1,
-  delay: 0.2
+  delay: 0.2,
 });
 
 gsap.from(".about-btn", {
   scrollTrigger: {
     trigger: ".about",
-    start: "top 70%"
+    start: "top 70%",
   },
   scale: 0.8,
   opacity: 0,
   duration: 0.6,
-  delay: 0.4
+  delay: 0.4,
 });
 
 /* Floating Image Animation */
@@ -182,7 +222,7 @@ gsap.to(".p1", {
   duration: 4,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 
 gsap.to(".p2", {
@@ -190,7 +230,7 @@ gsap.to(".p2", {
   duration: 5,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
 
 gsap.to(".p3", {
@@ -198,9 +238,8 @@ gsap.to(".p3", {
   duration: 4.5,
   repeat: -1,
   yoyo: true,
-  ease: "sine.inOut"
+  ease: "sine.inOut",
 });
-
 
 /*Services*/
 
@@ -218,10 +257,19 @@ gsap.utils.toArray(".service-card").forEach((card, i) => {
     scale: 0.95,
     duration: 1,
     ease: "power3.out",
-    delay: i * 0.05
+    delay: i * 0.05,
   });
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
+lenis.on("scroll", ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
 
 /*Team section CSS */
 
@@ -232,9 +280,8 @@ gsap.to(".team-floating img", {
   yoyo: true,
   repeat: -1,
   ease: "sine.inOut",
-  stagger: 0.2
+  stagger: 0.2,
 });
-
 
 /* Conatct section */
 
@@ -243,23 +290,23 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.from(".contact-left", {
   scrollTrigger: {
     trigger: ".contact-section",
-    start: "top 75%"
+    start: "top 75%",
   },
   x: -80,
   opacity: 0,
   duration: 1,
-  ease: "power3.out"
+  ease: "power3.out",
 });
 
 gsap.from(".contact-right", {
   scrollTrigger: {
     trigger: ".contact-section",
-    start: "top 75%"
+    start: "top 75%",
   },
   x: 80,
   opacity: 0,
   duration: 1,
-  ease: "power3.out"
+  ease: "power3.out",
 });
 
 gsap.registerPlugin(ScrollTrigger);
@@ -267,26 +314,25 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.from(".footer-cta", {
   scrollTrigger: {
     trigger: ".footer",
-    start: "top 80%"
+    start: "top 80%",
   },
   opacity: 0,
   y: 80,
   duration: 1,
-  ease: "power4.out"
+  ease: "power4.out",
 });
 
 gsap.from(".footer-col", {
   scrollTrigger: {
     trigger: ".footer-main",
-    start: "top 85%"
+    start: "top 85%",
   },
   opacity: 0,
   y: 40,
   stagger: 0.2,
   duration: 1,
-  ease: "power3.out"
+  ease: "power3.out",
 });
-
 
 // Floating particals system
 
@@ -298,7 +344,7 @@ const particleCount = 90;
 
 let mouse = {
   x: window.innerWidth / 2,
-  y: window.innerHeight / 2
+  y: window.innerHeight / 2,
 };
 
 function resizeCanvas() {
@@ -342,13 +388,7 @@ class Particle {
     const parallaxY = (mouse.y - canvas.height / 2) * this.depth * 0.02;
 
     ctx.beginPath();
-    ctx.arc(
-      this.x + parallaxX,
-      this.y + parallaxY,
-      this.size,
-      0,
-      Math.PI * 2
-    );
+    ctx.arc(this.x + parallaxX, this.y + parallaxY, this.size, 0, Math.PI * 2);
 
     ctx.fillStyle = `rgba(138, 180, 255, ${this.opacity})`;
     ctx.shadowBlur = 20 * this.depth;
@@ -378,4 +418,48 @@ function animateParticles() {
 initParticles();
 animateParticles();
 
+// Cursor animation
+function cursorAnimation() {
+  const cursorDot = document.querySelector(".cursor-dot");
+  const cursorOutline = document.querySelector(".cursor-outline");
 
+  let mouseX = 0;
+  let mouseY = 0;
+  let outlineX = 0;
+  let outlineY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left = mouseX + "px";
+    cursorDot.style.top = mouseY + "px";
+  });
+
+  // Smooth trailing animation
+  function animateCursor() {
+    outlineX += (mouseX - outlineX) * 0.1;
+    outlineY += (mouseY - outlineY) * 0.1;
+
+    cursorOutline.style.left = outlineX + "px";
+    cursorOutline.style.top = outlineY + "px";
+
+    requestAnimationFrame(animateCursor);
+  }
+
+  animateCursor();
+
+  const hoverElements = document.querySelectorAll("a, button");
+
+  hoverElements.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      cursorOutline.style.transform = "translate(-50%, -50%) scale(1.8)";
+    });
+
+    el.addEventListener("mouseleave", () => {
+      cursorOutline.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+  });
+}
+
+cursorAnimation();

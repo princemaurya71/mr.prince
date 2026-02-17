@@ -12,13 +12,27 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
   </head>
   <body>
+    <!-- Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <!-- loader -->
+    <div class="loader">
+      <div class="loader-content">
+        <h1 class="loader-text">Let's Go</h1>
+        <div class="loader-bar">
+          <div class="loader-progress"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Navbar -->
     <header class="navbar">
       <div class="menu-overlay" id="menuOverlay"></div>
@@ -346,67 +360,60 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     </section>
     <footer class="footer">
       <canvas id="footerParticles"></canvas>
-  <!-- CTA SECTION -->
-  <div class="footer-cta">
-    <span class="cta-badge">We Ready 24 Hours</span>
-    <h2>Have a project in mind? <span>Let's Talk</span></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <a href="#" class="cta-btn">
-      +91 9167853886 <i class="fa-solid fa-phone"></i>
-    </a>
-  </div>
-
-  <!-- MAIN FOOTER -->
-  <div class="footer-main">
-
-    <div class="footer-col">
-      <h3 class="logo">Mr.Prince</h3>
-      <p>A trusted company formed to help your business grow.</p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Useful Links</h4>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Reviews</a></li>
-        <li><a href="#">Pricing</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Support</h4>
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms & Condition</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Find Us</h4>
-      <p>Mon - Sat : 8am - 9pm</p>
-      <p>Nallasopara East, 401209</p>
-      <p>mr.prince227@gmail.com</p>
-
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
+      <!-- CTA SECTION -->
+      <div class="footer-cta">
+        <span class="cta-badge">We Ready 24 Hours</span>
+        <h2>Have a project in mind? <span>Let's Talk</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="#" class="cta-btn">
+          +91 9167853886 <i class="fa-solid fa-phone"></i>
+        </a>
       </div>
-    </div>
 
-  </div>
+      <!-- MAIN FOOTER -->
+      <div class="footer-main">
+        <div class="footer-col">
+          <h3 class="logo">Mr.Prince</h3>
+          <p>A trusted company formed to help your business grow.</p>
+        </div>
 
-  <div class="footer-bottom">
-    © 2026 Prince Maurya
-  </div>
+        <div class="footer-col">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
 
-</footer>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-col">
+          <h4>Find Us</h4>
+          <p>Mon - Sat : 8am - 9pm</p>
+          <p>Nallasopara East, 401209</p>
+          <p>mr.prince227@gmail.com</p>
 
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2026 Prince Maurya</div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
