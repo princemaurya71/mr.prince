@@ -41,47 +41,6 @@ gsap.from(".hero-img img", {
   delay: 1,
 });
 
-// Initialize Lenis
-const lenis = new Lenis({
-  duration: 1.2,
-  smoothWheel: true,
-  smoothTouch: false,
-  direction: "vertical",
-  gestureDirection: "vertical",
-  wheelMultiplier: 1,
-  touchMultiplier: 1.5,
-  infinite: false,
-});
-
-// RAF Loop
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-
-// Loader animation
-
-window.addEventListener("load", () => {
-  const tl = gsap.timeline();
-
-  tl.to(".loader-progress", {
-    width: "100%",
-    duration: 1.5,
-    ease: "power2.out",
-  })
-    .to(".loader-text", {
-      opacity: 0,
-      y: -20,
-      duration: 0.5,
-    })
-    .to(".loader", {
-      y: "-100%",
-      duration: 1,
-      ease: "power4.inOut",
-    });
-});
-
 // Dark Mode
 const toggle = document.getElementById("themeToggle");
 toggle.addEventListener("click", () => {
@@ -260,16 +219,6 @@ gsap.utils.toArray(".service-card").forEach((card, i) => {
     delay: i * 0.05,
   });
 });
-
-gsap.registerPlugin(ScrollTrigger);
-
-lenis.on("scroll", ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
-
-gsap.ticker.lagSmoothing(0);
 
 /*Team section CSS */
 
