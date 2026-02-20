@@ -200,6 +200,26 @@ gsap.to(".p3", {
   ease: "sine.inOut",
 });
 
+/*Project*/
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".project-card").forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 50,
+    scale: 0.95,
+    duration: 1,
+    ease: "power3.out",
+    delay: i * 0.05,
+  });
+});
+
 /*Services*/
 
 gsap.registerPlugin(ScrollTrigger);
