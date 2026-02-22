@@ -56,12 +56,12 @@
   margin-bottom: 20px;
   display: inline-block;
   color: white;
-  font-family: "f2", "Courier New";
+  /* font-family: "f2", "Courier New" ; */
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .loader-bar {
-  width: 350px;
+  width: 380px;
   height: 8px;
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -88,7 +88,7 @@
   }
 
   .loader-bar {
-    width: 240px;
+    width: 265px;
     height: 5px;
   }
 }
