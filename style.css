@@ -1119,6 +1119,14 @@ body.dark .blob {
   }
 }
 
+@media (max-width: 768px) {
+  .contact-section{
+    padding-top: 0px;
+    padding-bottom: 60px;
+  }
+  
+}
+
 /* Footer particals animation */
 .footer {
   position: relative;
