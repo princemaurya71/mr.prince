@@ -21,9 +21,9 @@
   --text: #ffffff;
   --primary: #1e90ff;
   --card-bg: rgba(255, 255, 255, 0.05);
-   --accent: #ff6a3d;
-   --border: rgba(255, 255, 255, 0.08);
-   --contact: rgba(170, 170, 170, 0.082);
+  --accent: #ff6a3d;
+  --border: rgba(255, 255, 255, 0.08);
+  --contact: rgba(170, 170, 170, 0.082);
 }
 
 body.dark {
@@ -45,10 +45,10 @@ body.dark {
   font-style: normal;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
-
 
 body {
   background: var(--bg);
@@ -58,8 +58,6 @@ body {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 600;
 }
-
-
 
 /* Navbar */
 .navbar {
@@ -176,7 +174,6 @@ nav ul li a:hover::after {
 
 /* Mobile Menu */
 @media (max-width: 768px) {
-
   .hamburger {
     display: flex;
   }
@@ -203,7 +200,6 @@ nav ul li a:hover::after {
     transform: translateX(0);
   }
 }
-
 
 /* Hero */
 .hero {
@@ -435,10 +431,10 @@ body.dark .blob {
 }
 
 /* Floating Images */
-.about-images .p3{
+.about-images .p3 {
   width: 20%;
 }
-.about-images img  {
+.about-images img {
   position: absolute;
   width: 210px;
   border-radius: 14px;
@@ -479,7 +475,7 @@ body.dark .blob {
 
 /* Responsive */
 @media (max-width: 1024) {
-  .about-text{
+  .about-text {
     display: 1;
   }
 }
@@ -489,11 +485,11 @@ body.dark .blob {
     font-size: 36px;
   }
 
-  .about-text1{
+  .about-text1 {
     display: 1;
   }
 
-  .about-text{
+  .about-text {
     display: none;
   }
 
@@ -536,7 +532,7 @@ body.dark .blob {
   /* border-bottom: 1px solid gray; */
 }
 
-.projects-section h2{
+.projects-section h2 {
   color: var(--primary);
   font-size: 3rem;
   font-weight: 400;
@@ -644,6 +640,22 @@ body.dark .blob {
   right: 30px;
   cursor: pointer;
   font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-left: 0%;
+      margin-right: 0%;
+    }
+
+    .project-card {
+      width: 100%;
+    }
+  }
 }
 
 /*Service */
@@ -779,7 +791,7 @@ body.dark .blob {
 .section-subtitle {
   max-width: 600px;
   margin: 12px auto 80px;
-  color:var(--text);
+  color: var(--text);
 }
 
 /* Floating avatars */
@@ -924,16 +936,15 @@ body.dark .blob {
   margin-bottom: 40px;
 }
 
-.contact-left span{
+.contact-left span {
   color: var(--text);
   background-color: var(--primary);
 }
 
-.contact-left a{
+.contact-left a {
   text-decoration: none;
   color: var(--text);
 }
-
 
 .contact-card {
   background: rgba(255, 255, 255, 0.05);
@@ -1153,11 +1164,10 @@ body.dark .blob {
 }
 
 @media (max-width: 768px) {
-  .contact-section{
+  .contact-section {
     padding-top: 0px;
     padding-bottom: 60px;
   }
-  
 }
 
 /* Footer particals animation */
@@ -1179,5 +1189,3 @@ body.dark .blob {
   position: relative;
   z-index: 2;
 }
-
-
