@@ -41,6 +41,24 @@ gsap.from(".hero-img img", {
   delay: 1,
 });
 
+//Navbar
+let lastScroll = 0;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.scrollY;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    // Scroll Down
+    navbar.classList.add("hide");
+  } else {
+    // Scroll Up
+    navbar.classList.remove("hide");
+  }
+
+  lastScroll = currentScroll;
+});
+
 // Dark Mode
 const toggle = document.getElementById("themeToggle");
 toggle.addEventListener("click", () => {
@@ -74,11 +92,9 @@ new Typed(".typing", {
 });
 
 //Add conect section to the button
-document.getElementById("contactBtn")
-  .addEventListener("click", function () {
-    document.getElementById("contact")
-      .scrollIntoView({ behavior: "smooth" });
-  });
+document.getElementById("contactBtn").addEventListener("click", function () {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+});
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
