@@ -28,7 +28,7 @@
 
 body.dark {
   --bg: #f4f4f4;
-  --text: #111;
+  --text: #000000;
   --primary: #0066ff;
   --card-bg: #ffffff;
   --accent: #ff6a3d;
@@ -122,12 +122,18 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
+
 #themeToggle {
   padding-right: 150px;
   background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+#themeToggle i{
+  font-size: 25px;
+  color: white !important;
 }
 
 /* Hamburger */
@@ -208,6 +214,10 @@ nav ul li a:hover::after {
   .nav-links ul.active {
     transform: translateX(0);
   }
+
+  nav ul li a:hover {
+    padding-left: 5px;
+  }
 }
 
 /* Hero */
@@ -219,7 +229,7 @@ nav ul li a:hover::after {
   padding: 0 10%;
   gap: 10px;
   overflow: hidden;
-  border-bottom: 1px solid gray;
+  /* border-bottom: 1px solid gray; */
   /* margin-left: 5%;
   margin-right: 10%; */
 }
@@ -779,10 +789,14 @@ body.dark .blob {
 }
 
 .section-title {
+  font-family: "f1";
+  color: var(--text);
   font-size: clamp(2rem, 4vw, 2.6rem);
 }
 
 .section-subtitle {
+  font-family: "f3" !important;
+  font-size: 22px !important;
   max-width: 600px;
   margin: 12px auto 80px;
   color: var(--text);

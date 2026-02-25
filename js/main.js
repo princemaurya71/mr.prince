@@ -242,6 +242,13 @@ gsap.utils.toArray(".project-card").forEach((card, i) => {
   });
 });
 
+ScrollTrigger.config({
+  ignoreMobileResize: true
+});
+
+gsap.defaults({
+  overwrite: "auto"
+});
 /*Services*/
 
 gsap.registerPlugin(ScrollTrigger);

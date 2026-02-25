@@ -1,0 +1,106 @@
+.brand-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: transparent;
+}
+
+.brand-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.brand-track {
+  display: flex;
+  align-items: center;
+  gap: 10vw;
+  width: max-content;
+}
+
+.brand-track .logo1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.brand-track .logo1 i {
+  height: 80px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  color: var(--text);
+  font-size: 10vh;
+}
+
+.brand-track .logo1 span {
+  color: white;
+  font-size: 20px;
+}
+/* 
+.brand-track i:hover {
+  opacity: 1;
+} */
+
+.brand-track .logo1 .youtube:hover {
+  opacity: 1;
+  color: rgba(255, 28, 28, 0.877);
+}
+.brand-track .logo1 .github:hover {
+  opacity: 1;
+  color: rgba(28, 255, 164, 0.877);
+}
+.brand-track .logo1 .threads:hover {
+  opacity: 1;
+  color: rgba(0, 149, 255, 0.877);
+}
+.brand-track .logo1 .reddit:hover {
+  opacity: 1;
+  color: rgba(0, 115, 255, 0.877);
+}
+.brand-track .logo1 .linkedin:hover {
+  opacity: 1;
+  color: rgba(28, 134, 255, 0.877);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-track {
+    gap: 14vw;
+  }
+
+  .brand-track .logo1 i {
+    font-size: 8vh;
+  }
+  .brand-wrapper::before {
+  left: 0;
+  background: transparent;
+}
+
+.brand-wrapper::after {
+  right: 0;
+  background: transparent;
+}
+}
+
+.brand-wrapper::before,
+.brand-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brand-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #000, transparent);
+}
+
+.brand-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #000, transparent);
+}

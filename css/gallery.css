@@ -12,7 +12,7 @@
 }
 
 .gallery-header span{
-    font-family: "f2";
+    font-family: "f1";
     color: var(--primary);
 }
 
@@ -20,7 +20,8 @@
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.2;
-  font-family: "f2";
+  font-family: "f1";
+  color: white;
 }
 
 .horizontal-wrapper {
