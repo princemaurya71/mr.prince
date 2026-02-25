@@ -435,7 +435,7 @@ body.dark .blob {
   font-family: "f4";
   font-weight: 500;
   font-size: 20px;
-  display: 0;
+  display: none;
 }
 
 .about-btn {
@@ -506,7 +506,7 @@ body.dark .blob {
   }
 
   .about-text1 {
-    display: 1;
+    display: block;
   }
 
   .about-text {
