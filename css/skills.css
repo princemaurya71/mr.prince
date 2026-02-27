@@ -50,7 +50,7 @@
 }
 
 .section-subtitle {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   opacity: 0.7;
   font-size: 16px;
   font-family: "f3", sans-serif;
@@ -95,8 +95,19 @@
    Icon
 ========================= */
 
-.skill-icon {
-  font-size: 40px;
+.skill-icon img {
+  width: 100px;
+  border-radius: 25px;
+}
+
+.skill-icon1 img {
+  width: 75px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.skill-icon{
+  font-size: 45px;
   margin-bottom: 15px;
 }
 
